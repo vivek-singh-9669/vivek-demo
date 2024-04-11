@@ -5,36 +5,104 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Portfolio</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Style for dropdown effect */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content p {
+  padding: 10px;
+  margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
 </head>
 <body>
 <div class="hero">
   <nav>
     <img src="vimg.jpeg" height="120px" width="120px" style="border-radius: 50%;" alt="">
     <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">PORTFOLIO</a></li>
-      <li><a href="#">SERVICES</a></li>
-      <li><a href="#">HIRE ME</a></li>
+      <li><a href="#" id="home-btn">HOME</a></li>
+      <li class="dropdown"><a href="#" id="about-btn">ABOUT</a>
+        <div class="dropdown-content">
+          <p id="about-message">My name is Vivek Ku Singh. I am from Jharkhand and currently working at Wipro Limited since 2022. I have experience in Web Development and enjoy creating innovative solutions.</p>
+        </div>
+      </li>
+      <li><a href="#" id="portfolio-btn">PORTFOLIO</a></li>
+      <li><a href="#" id="services-btn">SERVICES</a></li>
+      <li><a href="#" id="contact-btn">CONTACT US</a></li>
     </ul>
   </nav>
-     <div class="images">
-      <img src="image.jpeg" class="shape" alt="">
-      
-    </div>
+  <div class="images">
+    <img src="image.jpeg" class="shape" alt="">
+
+  </div>
   <div class="detail">
     <h1>I'm <span>Vivek</span> Singh</h1>
     <p>This is my official portfolio website to showcase all details and work experiences in Web Development.</p>
-    <!-- Download button for the resume -->
     <a href="resume.pdf" download="resume.pdf">DOWNLOAD CV</a>
- 
+    
   </div>
 </div>
-</body>
-</html>
 
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 Vivek Ku Singh. All rights reserved.</p>
+    <ul>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#" id="email-phone-btn">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
 
-</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var homeBtn = document.getElementById("home-btn");
+  var aboutBtn = document.getElementById("about-btn");
+  var portfolioBtn = document.getElementById("portfolio-btn");
+  var servicesBtn = document.getElementById("services-btn");
+  var contactBtn = document.getElementById("contact-btn");
+  var emailPhoneBtn = document.getElementById("email-phone-btn");
+
+  homeBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    // Handle home button action (e.g., navigate to home page)
+    // You can use window.location.href = "index.html"; for example
+  });
+
+  portfolioBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    // Handle portfolio button action (e.g., show portfolio section)
+  });
+
+  servicesBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    // Handle services button action (e.g., show services section)
+  });
+
+  contactBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    // Open email and phone when Contact Us button in navigation is clicked
+    window.location.href = "mailto:mailmevivek9669@gmail.com";
+  });
+
+  emailPhoneBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    // Open email and phone when Contact Us button in footer is clicked
+    window.location.href = "mailto:mailmevivek9669@gmail.com";
+  });
+});
+</script>
 
 </body>
 </html>
